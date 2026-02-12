@@ -1,0 +1,174 @@
+
+/* default spacing at sizing ng lahat ng elements */
+* {
+    box-sizing: border-box; /* Para kasama sa sukat ang padding at border */
+    margin: 0;              /* Tinatanggal yung default margin */
+    padding: 0;             /* Tinatanggal yung default padding */
+}
+
+
+/*  style ng buong webpage */
+body {
+    min-height: 100vh; /* Ginagawang kasing taas ng screen ang page */
+
+    /* Kulay at font theme  */
+    color: #4B3621;
+    font-family: "Georgia", "Times New Roman", serif;
+    text-align: center; /* Naka-center ang text */
+
+    /* Background image settings */
+    background-image: url('blue-photo.jpg'); 
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat; 
+    background-attachment: fixed; /* Hindi gumagalaw pag nag-scroll */
+
+    /* Layout gamit ang Flexbox */
+    display: flex;
+    flex-direction: column; /* Pababa ang ayos ng elements */
+    align-items: center;    /* Naka-center horizontally */
+    overflow-x: hidden;     /* Iwas horizontal scroll */
+    padding-bottom: 50px;   /* Space sa baba */
+}
+
+
+/* Style ng navigation bar */
+nav {
+    position: sticky; /* Dumikit sa taas kapag nag-scroll */
+    top: 0;
+    margin: 20px auto;
+    width: fit-content;
+    z-index: 1000; /* Para laging nasa ibabaw */
+
+    background-color: #1B3C53;
+    padding: 15px 30px;
+    border-radius: 50px; /* Rounded pill shape */
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+
+    transition: all 0.3s ease-in-out; /* Smooth animation */
+}
+
+/* Hover effect ng navigation */
+nav:hover {
+    transform: scale(1.05);      /* Bahagyang lumalaki */
+    background-color: #244d6b;   /* Mas maliwanag na kulay */
+}
+
+/* Style ng mga links sa nav */
+nav a {
+    color: #FFFDD0;
+    text-decoration: none; /* Tinatanggal underline */
+    font-size: 18px;
+    padding: 0 15px;
+    font-weight: bold;
+}
+
+/* Hover effect ng links */
+nav a:hover {
+    color: white;
+}
+
+
+h1 {
+    font-size: clamp(2rem, 8vw, 3.5rem); 
+    margin-top: 100px;   
+    margin-bottom: 20px;
+}
+
+/* Paragraph text */
+p {
+    max-width: 600px; 
+    width: 90%;
+    margin: 20px auto;
+    font-size: 1.2rem;
+    line-height: 1.6; 
+}
+
+
+/* Hover effect ng profile picture */
+.akes-pic {
+    width: 300px;
+    height: 400px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 5px solid #00e6f7;
+    display: block;
+    margin: 20px auto;
+
+    transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+}
+
+/* Kapag tinutukan ng mouse */
+.akes-pic:hover {
+    transform: scale(1.08) rotate(1deg); /* Bahagyang zoom + konting ikot */
+    box-shadow: 0 10px 25px rgba(0, 230, 247, 0.6); /* Glow effect */
+    filter: brightness(1.05); /* Kaunting liwanag */
+}
+
+
+/* General style ng ibang images */
+img {
+    display: inline-block;
+    margin: 15px;
+    border: 5px solid #00e6f7;
+    border-radius: 10px;
+    max-width: 95%;
+    height: auto;
+    transition: transform 0.3s ease; 
+}
+
+/* Specific image sizes */
+.strava-pic { width: 300px; }
+.ml-pic, .codm-pic { width: 100%; max-width: 700px; }
+
+
+/* Grid layout ng gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;     
+    padding: 10px;
+    width: 100%;
+    max-width: 1000px; 
+}
+
+/* Card container ng bawat image */
+.card {
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    background: rgb(22, 197, 139);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Image sa loob ng card */
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Hover animation ng card */
+.card:hover {
+    transform: scale(1.05); /* Bahagyang zoom */
+    box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+}
+
+/* Para sa maliliit na screen tulad ng cellphone */
+@media (max-width: 600px) {
+    nav {
+        padding: 10px 15px;
+        width: 95%;
+    }
+
+    nav a {
+        font-size: 14px;
+        padding: 0 8px;
+    }
+
+    h1 {
+        margin-top: 80px;
+    }
+}
